@@ -1,0 +1,101 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'database'
+// database.attack
+
+[
+  {
+    "AttackID": 0,
+    "Name": "Punch",
+    "Type": "Normal",
+    "Category": "Physical",
+    "Power": 40,
+    "Accuracy": 95,
+    "Priority": 0,
+    "Effect1Name": "",
+    "Effect1Chance": 0,
+    "Effect2Name": "",
+    "Effect2Chance": 0
+  },
+  {
+    "AttackID": 1,
+    "Name": "Scratch",
+    "Type": "Normal",
+    "Category": "Physical",
+    "Power": 45,
+    "Accuracy": 90,
+    "Priority": 0,
+    "Effect1Name": "",
+    "Effect1Chance": 0,
+    "Effect2Name": "",
+    "Effect2Chance": 0
+  },
+  {
+    "AttackID": 2,
+    "Name": "Fireball",
+    "Type": "Fire",
+    "Category": "Special",
+    "Power": 50,
+    "Accuracy": 85,
+    "Priority": 0,
+    "Effect1Name": "Burn",
+    "Effect1Chance": 10,
+    "Effect2Name": "",
+    "Effect2Chance": 0
+  },
+  {
+    "AttackID": 3,
+    "Name": "Bubble Attack",
+    "Type": "Water",
+    "Category": "Special",
+    "Power": 50,
+    "Accuracy": 85,
+    "Priority": 0,
+    "Effect1Name": "",
+    "Effect1Chance": 0,
+    "Effect2Name": "",
+    "Effect2Chance": 0
+  },
+  {
+    "AttackID": 4,
+    "Name": "Leaf Blade",
+    "Type": "Grass",
+    "Category": "Physical",
+    "Power": 50,
+    "Accuracy": 85,
+    "Priority": 0,
+    "Effect1Name": "",
+    "Effect1Chance": 0,
+    "Effect2Name": "",
+    "Effect2Chance": 0
+  },
+  {
+    "AttackID": 5,
+    "Name": "Quick Jab",
+    "Type": "Fighting",
+    "Category": "Physical",
+    "Power": 30,
+    "Accuracy": 95,
+    "Priority": 1,
+    "Effect1Name": "",
+    "Effect1Chance": 0,
+    "Effect2Name": "",
+    "Effect2Chance": 0
+  },
+  {
+    "AttackID": 6,
+    "Name": "Pebble Strike",
+    "Type": "Rock",
+    "Category": "Physical",
+    "Power": 55,
+    "Accuracy": 80,
+    "Priority": 0,
+    "Effect1Name": "",
+    "Effect1Chance": 0,
+    "Effect2Name": "",
+    "Effect2Chance": 0
+  }
+]// database.character
