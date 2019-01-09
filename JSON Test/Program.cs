@@ -44,10 +44,27 @@ namespace JSON_Test
 
         static void EditElement(string tableName, int id)
         {
+            List<KeyValuePair<string,string>> values = new List<KeyValuePair<string, string>>();
             if (tableName == "attack")
             {
                 Attack i = attacks[id];
+                values.Add(new KeyValuePair<string,string>("Name", "Str"));
+                values.Add(new KeyValuePair<string, string>("Type", "Str"));
+                values.Add(new KeyValuePair<string, string>("Category", "Str"));
+                values.Add(new KeyValuePair<string, string>("Power", "Int"));
+                values.Add(new KeyValuePair<string, string>("Accuracy", "Int"));
+                values.Add(new KeyValuePair<string, string>("Priority", "Int"));
+                values.Add(new KeyValuePair<string, string>("Effect1Name", "Str"));
+                values.Add(new KeyValuePair<string, string>("Effect1Chance", "Int"));
+                values.Add(new KeyValuePair<string, string>("Effect2Name", "Str"));
+                values.Add(new KeyValuePair<string, string>("Effect2Chance", "Int"));
+
                 Console.WriteLine("Current Values:");
+                foreach (KeyValuePair<string,string> x in values)
+                {
+                    Console.WriteLine(x.Key+": "+ x.Value);
+                }
+                
                 Console.WriteLine("Name: " + i.Name);
                 Console.WriteLine("Type: " + i.Type);
                 Console.WriteLine("Category: " + i.Category);
@@ -60,26 +77,47 @@ namespace JSON_Test
                 Console.WriteLine("Effect2Chance: " + i.Effect2Chance);
                 Console.WriteLine();
 
+                string temp = "";
                 Console.WriteLine("Enter Attack Name");
-                i.Name = Console.ReadLine();
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Name = temp;
                 Console.WriteLine("Enter Type");
-                i.Type = Console.ReadLine();
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Type = temp;
                 Console.WriteLine("Enter Category");
-                i.Category = Console.ReadLine();
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Category = temp;
                 Console.WriteLine("Enter Power");
-                i.Power = Convert.ToInt32(Console.ReadLine());
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Power = Convert.ToInt32(temp);
                 Console.WriteLine("Enter Accuracy");
-                i.Accuracy = Convert.ToInt32(Console.ReadLine());
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Accuracy = Convert.ToInt32(temp);
                 Console.WriteLine("Enter Priority");
-                i.Priority = Convert.ToInt32(Console.ReadLine());
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Priority = Convert.ToInt32(temp);
                 Console.WriteLine("Enter Effect1Name");
-                i.Effect1Name = Console.ReadLine();
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Effect1Name = temp;
                 Console.WriteLine("Enter Effect1Chance");
-                i.Effect1Chance = Convert.ToInt32(Console.ReadLine());
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Effect1Chance = Convert.ToInt32(temp);
                 Console.WriteLine("Enter Effect2Name");
-                i.Effect2Name = Console.ReadLine();
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Effect2Name = temp;
                 Console.WriteLine("Enter Effect2Chance");
-                i.Effect2Chance = Convert.ToInt32(Console.ReadLine());
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Effect2Chance = Convert.ToInt32(temp);
             }
         }
 
@@ -191,7 +229,6 @@ namespace JSON_Test
                 }
             }
             while (running);
-            Console.ReadLine();
         }
     }
 }

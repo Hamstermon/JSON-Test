@@ -85,4 +85,178 @@ namespace JSON_Test
             get { return effect2Chance; }
         }
     }
+    class CharData
+    {
+        int charID = 0;
+        public int CharID
+        {
+            set { charID = value; }
+            get { return charID; }
+        }
+        string name = "";
+        public string Name
+        {
+            set { name = value; }
+            get { return name; }
+        }
+        string spriteSheet = "";
+        public string SpriteSheet
+        {
+            set { spriteSheet = value; }
+            get { return spriteSheet; }
+        }
+        int spriteIndex = 0;
+        public int SpriteIndex
+        {
+            set { spriteIndex = value; }
+            get { return spriteIndex; }
+        }
+        int xp = 0;
+        public int XP
+        {
+            set { xp = value; }
+            get { return xp; }
+        }
+        string type1 = "";
+        public string Type1
+        {
+            set { type1 = value; }
+            get { return type1; }
+        }
+        string type2 = "";
+        public string Type2
+        {
+            set { type2 = value; }
+            get { return type2; }
+        }
+        string type3 = "";
+        public string Type3
+        {
+            set { type3 = value; }
+            get { return type3; }
+        }
+        int hp = 0;
+        public int HP
+        {
+            set { hp = value; }
+            get { return hp; }
+        }
+        int atk = 0;
+        public int ATK
+        {
+            set { atk = value; }
+            get { return atk; }
+        }
+        int def = 0;
+        public int DEF
+        {
+            set { def = value; }
+            get { return def; }
+        }
+        int mag = 0;
+        public int MAG
+        {
+            set { mag = value; }
+            get { return mag; }
+        }
+        int res = 0;
+        public int RES
+        {
+            set { res = value; }
+            get { return res; }
+        }
+        int spd = 0;
+        public int SPD
+        {
+            set { spd = value; }
+            get { return spd; }
+        }
+        string overworldAI = "";
+        public string OverworldAI
+        {
+            set { overworldAI = value; }
+            get { return overworldAI; }
+        }
+        string battleAI = "";
+        public string BattleAI
+        {
+            set { battleAI = value; }
+            get { return battleAI; }
+        }
+    }
+    class MapData
+    {
+        int mapID = 0;
+        public int MapID
+        {
+            set { mapID = value; }
+            get { return mapID; }
+        }
+        string name = "";
+        public string Name
+        {
+            set { name = value; }
+            get { return name; }
+        }
+        string mapFileName = "";
+        public string MapFileName
+        {
+            set { mapFileName = value; }
+            get { return mapFileName; }
+        }
+    }
+    class MapChar
+    {
+        int mapID = 0;
+        public int MapID
+        {
+            set { mapID = value; }
+            get { return mapID; }
+        }
+        int charID = 0;
+        public int CharID
+        {
+            set { charID = value; }
+            get { return charID; }
+        }
+        int weight = 0;
+        public int Weight
+        {
+            set { weight = value; }
+            get { return weight; }
+        }
+        int minLevel = 0;
+        public int MinLevel
+        {
+            set { minLevel = value; }
+            get { return minLevel; }
+        }
+        int maxLevel = 0;
+        public int MaxLevel
+        {
+            set { maxLevel = value; }
+            get { return maxLevel; }
+        }
+    }
+    class CharAttack
+    {
+        int charID = 0;
+        public int CharID
+        {
+            set { charID = value; }
+            get { return charID; }
+        }
+        int attackID = 0;
+        public int AttackID
+        {
+            set { attackID = value; }
+            get { return attackID; }
+        }
+        int level = 0;
+        public int Level
+        {
+            set { level = value; }
+            get { return level; }
+        }
+    }
 }
