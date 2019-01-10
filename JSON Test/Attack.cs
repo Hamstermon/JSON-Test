@@ -57,6 +57,13 @@ namespace JSON_Test
             get { return priority; }
         }
 
+        int mp = 0;
+        public int MP
+        {
+            set { mp = value; }
+            get { return mp; }
+        }
+
         string effect1Name = "";
         public string Effect1Name
         {
@@ -207,6 +214,12 @@ namespace JSON_Test
     }
     class MapChar
     {
+        int id = 0;
+        public int ID
+        {
+            set { id = value; }
+            get { return id; }
+        }
         int mapID = 0;
         public int MapID
         {
@@ -240,6 +253,12 @@ namespace JSON_Test
     }
     class CharAttack
     {
+        int id = 0;
+        public int ID
+        {
+            set { id = value; }
+            get { return id; }
+        }
         int charID = 0;
         public int CharID
         {
