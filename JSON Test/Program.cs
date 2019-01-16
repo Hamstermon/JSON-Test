@@ -78,6 +78,10 @@ namespace JSON_Test
                 character.SPD = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("OverworldAI");
                 character.OverworldAI = Console.ReadLine();
+                Console.WriteLine("PassiveSpeed");
+                character.PassiveSpeed = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("AgressiveSpeed");
+                character.AgressiveSpeed = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("BattleAI");
                 character.BattleAI = Console.ReadLine();
                 character.CharID = GetFirstID(tableName);
@@ -90,6 +94,8 @@ namespace JSON_Test
                 map.Name = Console.ReadLine();
                 Console.WriteLine("File Name");
                 map.MapFileName = Console.ReadLine();
+                Console.WriteLine("SpawnCap");
+                map.SpawnCap = Convert.ToInt32(Console.ReadLine());
                 map.MapID = GetFirstID(tableName);
                 maps.Add(map);
             }
@@ -217,6 +223,8 @@ namespace JSON_Test
                 Console.WriteLine("RES: " + i.RES);
                 Console.WriteLine("SPD: " + i.SPD);
                 Console.WriteLine("OverworldAI: " + i.OverworldAI);
+                Console.WriteLine("PassiveSpeed: " + i.PassiveSpeed);
+                Console.WriteLine("AgressiveSpeed: " + i.AgressiveSpeed);
                 Console.WriteLine("BattleAI: " + i.BattleAI);
                 Console.WriteLine();
 
@@ -291,6 +299,16 @@ namespace JSON_Test
                 if (temp != "")
                     i.OverworldAI = temp;
 
+                Console.WriteLine("Enter Passive Speed");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.PassiveSpeed = Convert.ToInt32(temp);
+
+                Console.WriteLine("Enter Agressive Speed");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.AgressiveSpeed = Convert.ToInt32(temp);
+
                 Console.WriteLine("Enter Battle AI");
                 temp = Console.ReadLine();
                 if (temp != "")
@@ -302,6 +320,7 @@ namespace JSON_Test
 
                 Console.WriteLine("Name: " + i.Name);
                 Console.WriteLine("FileName: " + i.MapFileName);
+                Console.WriteLine("SpawnCap: " + i.SpawnCap);
                 Console.WriteLine();
 
                 string temp = "";
@@ -313,6 +332,10 @@ namespace JSON_Test
                 temp = Console.ReadLine();
                 if (temp != "")
                     i.MapFileName = temp;
+                Console.WriteLine("Enter Spawn Cap");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.SpawnCap = Convert.ToInt32(temp);
             }
             else if (tableName == "mapchar")
             {
@@ -458,6 +481,8 @@ namespace JSON_Test
                     Console.WriteLine("RES: " + i.RES);
                     Console.WriteLine("SPD: " + i.SPD);
                     Console.WriteLine("OverworldAI: " + i.OverworldAI);
+                    Console.WriteLine("PassiveSpeed: " + i.PassiveSpeed);
+                    Console.WriteLine("AgressiveSpeed: " + i.AgressiveSpeed);
                     Console.WriteLine("BattleAI: " + i.BattleAI);
                     Console.WriteLine();
                 }
@@ -469,6 +494,7 @@ namespace JSON_Test
                     Console.WriteLine("ID: " + i.MapID);
                     Console.WriteLine("Name: " + i.Name);
                     Console.WriteLine("FileName: " + i.MapFileName);
+                    Console.WriteLine("SpawnCap: " + i.SpawnCap);
                     Console.WriteLine();
                 }
             }
