@@ -22,30 +22,104 @@ namespace JSON_Test
             if (tableName == "attack")
             {
                 Attack atk = new Attack();
-                Console.WriteLine("Enter Attack Name");
+                Console.WriteLine("Name");
                 atk.Name = Console.ReadLine();
-                Console.WriteLine("Enter Type");
+                Console.WriteLine("Type");
                 atk.Type = Console.ReadLine();
-                Console.WriteLine("Enter Category");
+                Console.WriteLine("Category");
                 atk.Category = Console.ReadLine();
-                Console.WriteLine("Enter Power");
+                Console.WriteLine("Power");
                 atk.Power = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Accuracy");
+                Console.WriteLine("Accuracy");
                 atk.Accuracy = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Priority");
+                Console.WriteLine("Priority");
                 atk.Priority = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter MP Cost");
+                Console.WriteLine("MP Cost");
                 atk.MP = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Effect1Name");
+                Console.WriteLine("Effect1Name");
                 atk.Effect1Name = Console.ReadLine();
-                Console.WriteLine("Enter Effect1Chance");
+                Console.WriteLine("Effect1Chance");
                 atk.Effect1Chance = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter Effect2Name");
+                Console.WriteLine("Effect2Name");
                 atk.Effect2Name = Console.ReadLine();
-                Console.WriteLine("Enter Effect2Chance");
+                Console.WriteLine("Effect2Chance");
                 atk.Effect2Chance = Convert.ToInt32(Console.ReadLine());
                 atk.AttackID = GetFirstID(tableName);
                 attacks.Add(atk);
+            }
+            else if (tableName == "character")
+            {
+                CharData character = new CharData();
+                Console.WriteLine("Name");
+                character.Name = Console.ReadLine();
+                Console.WriteLine("Spritesheet");
+                character.SpriteSheet = Console.ReadLine();
+                Console.WriteLine("SpriteIndex");
+                character.SpriteIndex = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("XP");
+                character.XP = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Type1");
+                character.Type1 = Console.ReadLine();
+                Console.WriteLine("Type2");
+                character.Type2 = Console.ReadLine();
+                Console.WriteLine("Type3");
+                character.Type3 = Console.ReadLine();
+                Console.WriteLine("HP");
+                character.HP = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("ATK");
+                character.ATK = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("DEF");
+                character.DEF = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("MAG");
+                character.MAG = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("RES");
+                character.RES = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("SPD");
+                character.SPD = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("OverworldAI");
+                character.OverworldAI = Console.ReadLine();
+                Console.WriteLine("BattleAI");
+                character.BattleAI = Console.ReadLine();
+                character.CharID = GetFirstID(tableName);
+                characters.Add(character);
+            }
+            else if (tableName == "map")
+            {
+                MapData map = new MapData();
+                Console.WriteLine("Name");
+                map.Name = Console.ReadLine();
+                Console.WriteLine("File Name");
+                map.MapFileName = Console.ReadLine();
+                map.MapID = GetFirstID(tableName);
+                maps.Add(map);
+            }
+            else if (tableName == "mapchar")
+            {
+                MapChar mc = new MapChar();
+                Console.WriteLine("MapID");
+                mc.MapID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("CharID");
+                mc.CharID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Weight");
+                mc.Weight = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("MinLevel");
+                mc.MinLevel = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("MaxLevel");
+                mc.MaxLevel = Convert.ToInt32(Console.ReadLine());
+                mc.ID = GetFirstID(tableName);
+                mapChar.Add(mc);
+            }
+            else if (tableName == "charattack")
+            {
+                CharAttack ca = new CharAttack();
+                Console.WriteLine("CharID");
+                ca.CharID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("AttackID");
+                ca.AttackID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Level");
+                ca.Level = Convert.ToInt32(Console.ReadLine());
+                ca.ID = GetFirstID(tableName);
+                charAtk.Add(ca);
             }
         }
 
@@ -665,6 +739,7 @@ namespace JSON_Test
             {
                 serializer.Serialize(writer, charAtk);
             }
+            Console.WriteLine("tables saved");
         }
 
         static void Load()
@@ -736,6 +811,31 @@ namespace JSON_Test
                 {
                     Save();
                     savedChanges = true;
+                }
+                else if (command[0] == "attack")
+                {
+                    tableName = "attack";
+                    Console.WriteLine("Now editing attack table");
+                }
+                else if (command[0] == "character")
+                {
+                    tableName = "character";
+                    Console.WriteLine("Now editing character table");
+                }
+                else if (command[0] == "map")
+                {
+                    tableName = "map";
+                    Console.WriteLine("Now editing map table");
+                }
+                else if (command[0] == "mapchar")
+                {
+                    tableName = "mapchar";
+                    Console.WriteLine("Now editing map-char table");
+                }
+                else if (command[0] == "charattack")
+                {
+                    tableName = "charattack";
+                    Console.WriteLine("Now editing char-attack table");
                 }
                 else if(command[0] == "exit")
                 {
