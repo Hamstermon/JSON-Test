@@ -105,6 +105,13 @@ namespace JSON_Test
             set { effect2Chance = value; }
             get { return effect2Chance; }
         }
+
+        string description = "";
+        public string Description
+        {
+            set { description = value; }
+            get { return description; }
+        }
     }
     public class CharData
     {

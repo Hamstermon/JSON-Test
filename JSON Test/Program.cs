@@ -48,6 +48,8 @@ namespace JSON_Test
                 atk.Effect2Name = Console.ReadLine();
                 Console.WriteLine("Effect2Chance");
                 atk.Effect2Chance = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Description");
+                atk.Description = Console.ReadLine();
                 atk.AttackID = GetFirstID(tableName);
                 attacks.Add(atk);
             }
@@ -155,6 +157,7 @@ namespace JSON_Test
                 Console.WriteLine("Effect1Chance: " + i.Effect1Chance);
                 Console.WriteLine("Effect2Name: " + i.Effect2Name);
                 Console.WriteLine("Effect2Chance: " + i.Effect2Chance);
+                Console.WriteLine("Description: " + i.Description);
                 Console.WriteLine();
 
                 string temp = "";
@@ -222,6 +225,11 @@ namespace JSON_Test
                 temp = Console.ReadLine();
                 if (temp != "")
                     i.Effect2Chance = Convert.ToInt32(temp);
+
+                Console.WriteLine("Enter Description");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Description = temp;
             }
             else if (tableName == "character")
             {
@@ -485,6 +493,7 @@ namespace JSON_Test
                     Console.WriteLine("Effect1Chance: " + i.Effect1Chance);
                     Console.WriteLine("Effect2Name: " + i.Effect2Name);
                     Console.WriteLine("Effect2Chance: " + i.Effect2Chance);
+                    Console.WriteLine("Description: " + i.Description);
                     Console.WriteLine();
                 }
             }
