@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JSON_Test
 {
-    class Attack
+    public class Attack
     {
         int attackID = 0;
         public int AttackID
@@ -34,6 +34,20 @@ namespace JSON_Test
         {
             set { category = value; }
             get { return category; }
+        }
+
+        string zones = "OOXOO";
+        public string Zones
+        {
+            set { zones = value; }
+            get { return zones; }
+        }
+
+        bool fix = false;
+        public bool Fixed
+        {
+            set { fix = value; }
+            get { return fix; }
         }
 
         int power = 0;
@@ -92,7 +106,7 @@ namespace JSON_Test
             get { return effect2Chance; }
         }
     }
-    class CharData
+    public class CharData
     {
         int charID = 0;
         public int CharID
@@ -147,6 +161,12 @@ namespace JSON_Test
         {
             set { hp = value; }
             get { return hp; }
+        }
+        int mp = 0;
+        public int MP
+        {
+            set { mp = value; }
+            get { return mp; }
         }
         int atk = 0;
         public int ATK

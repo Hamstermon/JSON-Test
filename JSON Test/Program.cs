@@ -28,6 +28,10 @@ namespace JSON_Test
                 atk.Type = Console.ReadLine();
                 Console.WriteLine("Category");
                 atk.Category = Console.ReadLine();
+                Console.WriteLine("Zones");
+                atk.Zones = Console.ReadLine();
+                Console.WriteLine("Fixed");
+                atk.Fixed = Convert.ToBoolean(Console.ReadLine());
                 Console.WriteLine("Power");
                 atk.Power = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Accuracy");
@@ -66,6 +70,8 @@ namespace JSON_Test
                 character.Type3 = Console.ReadLine();
                 Console.WriteLine("HP");
                 character.HP = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("MP");
+                character.MP = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("ATK");
                 character.ATK = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("DEF");
@@ -139,6 +145,8 @@ namespace JSON_Test
                 Console.WriteLine("Name: " + i.Name);
                 Console.WriteLine("Type: " + i.Type);
                 Console.WriteLine("Category: " + i.Category);
+                Console.WriteLine("Zones: " + i.Zones);
+                Console.WriteLine("Fixed: " + i.Fixed);
                 Console.WriteLine("Power: " + i.Power);
                 Console.WriteLine("Accuracy: " + i.Accuracy);
                 Console.WriteLine("Priority: " + i.Priority);
@@ -164,6 +172,16 @@ namespace JSON_Test
                 temp = Console.ReadLine();
                 if (temp != "")
                     i.Category = temp;
+
+                Console.WriteLine("Enter Zones");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Zones = temp;
+
+                Console.WriteLine("Enter Fixed");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Fixed = Convert.ToBoolean(temp);
 
                 Console.WriteLine("Enter Power");
                 temp = Console.ReadLine();
@@ -217,6 +235,7 @@ namespace JSON_Test
                 Console.WriteLine("Type2: " + i.Type2);
                 Console.WriteLine("Type3: " + i.Type3);
                 Console.WriteLine("HP: " + i.HP);
+                Console.WriteLine("MP: " + i.MP);
                 Console.WriteLine("ATK: " + i.ATK);
                 Console.WriteLine("DEF: " + i.DEF);
                 Console.WriteLine("MAG: " + i.MAG);
@@ -268,6 +287,11 @@ namespace JSON_Test
                 temp = Console.ReadLine();
                 if (temp != "")
                     i.HP = Convert.ToInt32(temp);
+
+                Console.WriteLine("Enter MP");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.MP = Convert.ToInt32(temp);
 
                 Console.WriteLine("Enter ATK");
                 temp = Console.ReadLine();
@@ -451,6 +475,8 @@ namespace JSON_Test
                     Console.WriteLine("Name: " + i.Name);
                     Console.WriteLine("Type: " + i.Type);
                     Console.WriteLine("Category: " + i.Category);
+                    Console.WriteLine("Zones: " + i.Zones);
+                    Console.WriteLine("Fixed: " + i.Fixed);
                     Console.WriteLine("Power: " + i.Power);
                     Console.WriteLine("Accuracy: " + i.Accuracy);
                     Console.WriteLine("Priority: " + i.Priority);
@@ -475,6 +501,7 @@ namespace JSON_Test
                     Console.WriteLine("Type2: " + i.Type2);
                     Console.WriteLine("Type3: " + i.Type3);
                     Console.WriteLine("HP: " + i.HP);
+                    Console.WriteLine("MP: " + i.MP);
                     Console.WriteLine("ATK: " + i.ATK);
                     Console.WriteLine("DEF: " + i.DEF);
                     Console.WriteLine("MAG: " + i.MAG);
