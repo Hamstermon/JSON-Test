@@ -250,6 +250,12 @@ namespace JSON_Test
             set { mapFileName = value; }
             get { return mapFileName; }
         }
+        string battleFileName = "";
+        public string BattleFileName
+        {
+            set { battleFileName = value; }
+            get { return battleFileName; }
+        }
         int spawnCap = 0;
         public int SpawnCap
         {

@@ -28,7 +28,7 @@ namespace JSON_Test
                 atk.Type = Console.ReadLine();
                 Console.WriteLine("Category");
                 atk.Category = Console.ReadLine();
-                Console.WriteLine("Zones");
+                Console.WriteLine("Zones (O = none, X = hit)");
                 atk.Zones = Console.ReadLine();
                 Console.WriteLine("Fixed");
                 atk.Fixed = Convert.ToBoolean(Console.ReadLine());
@@ -100,8 +100,10 @@ namespace JSON_Test
                 MapData map = new MapData();
                 Console.WriteLine("Name");
                 map.Name = Console.ReadLine();
-                Console.WriteLine("File Name");
+                Console.WriteLine("Map File Name");
                 map.MapFileName = Console.ReadLine();
+                Console.WriteLine("Battle File Name");
+                map.BattleFileName = Console.ReadLine();
                 Console.WriteLine("SpawnCap");
                 map.SpawnCap = Convert.ToInt32(Console.ReadLine());
                 map.MapID = GetFirstID(tableName);
@@ -176,7 +178,7 @@ namespace JSON_Test
                 if (temp != "")
                     i.Category = temp;
 
-                Console.WriteLine("Enter Zones");
+                Console.WriteLine("Enter Zones (O = none, X = hit)");
                 temp = Console.ReadLine();
                 if (temp != "")
                     i.Zones = temp;
@@ -351,7 +353,8 @@ namespace JSON_Test
                 MapData i = maps[FindElement(tableName, id)];
 
                 Console.WriteLine("Name: " + i.Name);
-                Console.WriteLine("FileName: " + i.MapFileName);
+                Console.WriteLine("MapFileName: " + i.MapFileName);
+                Console.WriteLine("BattleFileName: " + i.BattleFileName);
                 Console.WriteLine("SpawnCap: " + i.SpawnCap);
                 Console.WriteLine();
 
@@ -360,10 +363,14 @@ namespace JSON_Test
                 temp = Console.ReadLine();
                 if (temp != "")
                     i.Name = temp;
-                Console.WriteLine("Enter Filename");
+                Console.WriteLine("Enter Map Filename");
                 temp = Console.ReadLine();
                 if (temp != "")
                     i.MapFileName = temp;
+                Console.WriteLine("Enter Battle Filename");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.BattleFileName = temp;
                 Console.WriteLine("Enter Spawn Cap");
                 temp = Console.ReadLine();
                 if (temp != "")
@@ -529,7 +536,8 @@ namespace JSON_Test
                 {
                     Console.WriteLine("ID: " + i.MapID);
                     Console.WriteLine("Name: " + i.Name);
-                    Console.WriteLine("FileName: " + i.MapFileName);
+                    Console.WriteLine("MapFileName: " + i.MapFileName);
+                    Console.WriteLine("BattleFileName: " + i.BattleFileName);
                     Console.WriteLine("SpawnCap: " + i.SpawnCap);
                     Console.WriteLine();
                 }
