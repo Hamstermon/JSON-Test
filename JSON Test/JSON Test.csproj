@@ -55,6 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="attacks.txt" />
+    <Content Include="character.txt" />
+    <Content Include="charattack.txt" />
+    <Content Include="mapchar.txt" />
+    <Content Include="maps.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
