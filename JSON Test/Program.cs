@@ -15,6 +15,7 @@ namespace JSON_Test
         static List<MapData> maps = new List<MapData>();
         static List<MapChar> mapChar = new List<MapChar>();
         static List<CharAttack> charAtk = new List<CharAttack>();
+        static List<Dialog> dialogs = new List<Dialog>();
         static JsonSerializer serializer = new JsonSerializer();
 
         static void AddElement(string tableName)
@@ -137,11 +138,43 @@ namespace JSON_Test
                 ca.ID = GetFirstID(tableName);
                 charAtk.Add(ca);
             }
+            else if (tableName == "dialog")
+            {
+                Dialog di = new Dialog();
+                Console.WriteLine("DialogName");
+                di.Name = Console.ReadLine();
+                Console.WriteLine("CharacterName");
+                di.CharName = Console.ReadLine();
+                Console.WriteLine("Text");
+                di.Text = Console.ReadLine();
+
+                Console.WriteLine("Option1Text");
+                di.OptionName1 = Console.ReadLine();
+                Console.WriteLine("Option1Next");
+                di.OptionNext1 = Console.ReadLine();
+                Console.WriteLine("Option1Event");
+                di.OptionEvent1 = Console.ReadLine();
+
+                Console.WriteLine("Option2Text");
+                di.OptionName2 = Console.ReadLine();
+                Console.WriteLine("Option2Next");
+                di.OptionNext2 = Console.ReadLine();
+                Console.WriteLine("Option2Event");
+                di.OptionEvent2 = Console.ReadLine();
+
+                Console.WriteLine("Option3Text");
+                di.OptionName3 = Console.ReadLine();
+                Console.WriteLine("Option3Next");
+                di.OptionNext3 = Console.ReadLine();
+                Console.WriteLine("Option3Event");
+                di.OptionEvent3 = Console.ReadLine();
+                dialogs.Add(di);
+            }
         }
 
         static void EditElement(string tableName, int id)
         {
-            List<KeyValuePair<string,string>> values = new List<KeyValuePair<string, string>>();
+            //List<KeyValuePair<string,string>> values = new List<KeyValuePair<string, string>>();
             if (tableName == "attack")
             {
                 Attack i = attacks[FindElement(tableName,id)];
@@ -456,6 +489,100 @@ namespace JSON_Test
             }
         }
 
+        static void EditElement(string tableName, string name)
+        {
+            if (tableName == "dialog")
+            {
+                Dialog i = FindDialog(name);
+                if (i.Name != "xd")
+                {
+                    Console.WriteLine("Character: " + i.CharName);
+                    Console.WriteLine("Text: " + i.Text);
+                    Console.WriteLine("Option1Text: " + i.OptionName1);
+                    Console.WriteLine("Option1Next: " + i.OptionNext1);
+                    Console.WriteLine("Option1Event: " + i.OptionEvent1);
+
+                    Console.WriteLine("Option2Text: " + i.OptionName2);
+                    Console.WriteLine("Option2Next: " + i.OptionNext2);
+                    Console.WriteLine("Option2Event: " + i.OptionEvent2);
+
+                    Console.WriteLine("Option3Text: " + i.OptionName3);
+                    Console.WriteLine("Option3Next: " + i.OptionNext3);
+                    Console.WriteLine("Option3Event: " + i.OptionEvent3);
+
+                    Console.WriteLine("Enter NAME");
+                    string temp = Console.ReadLine();
+                    if (temp != "")
+                        i.Name = temp;
+                    Console.WriteLine("Enter CHARACTER");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.CharName = temp;
+                    Console.WriteLine("Enter TEXT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.Text = temp;
+
+                    Console.WriteLine("Enter OPTION 1 TEXT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionName1 = temp;
+                    else if (temp == " ")
+                        i.OptionName1 = "";
+                    Console.WriteLine("Enter OPTION 1 NEXT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionNext1 = temp;
+                    else if (temp == " ")
+                        i.OptionNext1 = "";
+                    Console.WriteLine("Enter OPTION 1 EVENT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionEvent1 = temp;
+                    else if (temp == " ")
+                        i.OptionEvent1 = "";
+
+                    Console.WriteLine("Enter OPTION 2 TEXT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionName2 = temp;
+                    else if (temp == " ")
+                        i.OptionName2 = "";
+                    Console.WriteLine("Enter OPTION 2 NEXT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionNext2 = temp;
+                    else if (temp == " ")
+                        i.OptionNext2 = "";
+                    Console.WriteLine("Enter OPTION 2 EVENT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionEvent2 = temp;
+                    else if (temp == " ")
+                        i.OptionEvent2 = "";
+
+                    Console.WriteLine("Enter OPTION 3 TEXT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionName3 = temp;
+                    else if (temp == " ")
+                        i.OptionName3 = "";
+                    Console.WriteLine("Enter OPTION 3 NEXT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionNext3 = temp;
+                    else if (temp == " ")
+                        i.OptionNext3 = "";
+                    Console.WriteLine("Enter OPTION 3 EVENT");
+                    temp = Console.ReadLine();
+                    if (temp != "")
+                        i.OptionEvent3 = temp;
+                    else if (temp == " ")
+                        i.OptionEvent3 = "";
+                }
+            }
+        }
+
         static void RemoveElement(string tableName, int id)
         {
             if (tableName == "attack")
@@ -477,6 +604,15 @@ namespace JSON_Test
             else if (tableName == "charattack")
             {
                 charAtk.Remove(charAtk[FindElement(tableName, id)]);
+            }
+        }
+
+        static void RemoveDialog(string name)
+        {
+            Dialog temp = FindDialog(name);
+            if (temp.Name != "xd")
+            {
+                dialogs.Remove(temp);
             }
         }
 
@@ -622,6 +758,50 @@ namespace JSON_Test
                     }
                 }
             }
+            else if (tableName == "dialog")
+            {
+                Console.WriteLine("Enter character filter");
+                string filter = Console.ReadLine();
+                foreach (Dialog i in dialogs)
+                {
+                    if (filter == "")
+                    {
+                        Console.WriteLine("NAME: " + i.Name);
+                        Console.WriteLine("Character: " + i.CharName);
+                        Console.WriteLine("Text: " + i.Text);
+                        Console.WriteLine("Option1Text: " + i.OptionName1);
+                        Console.WriteLine("Option1Next: " + i.OptionNext1);
+                        Console.WriteLine("Option1Event: " + i.OptionEvent1);
+
+                        Console.WriteLine("Option2Text: " + i.OptionName2);
+                        Console.WriteLine("Option2Next: " + i.OptionNext2);
+                        Console.WriteLine("Option2Event: " + i.OptionEvent2);
+
+                        Console.WriteLine("Option3Text: " + i.OptionName3);
+                        Console.WriteLine("Option3Next: " + i.OptionNext3);
+                        Console.WriteLine("Option3Event: " + i.OptionEvent3);
+                        Console.WriteLine();
+                    }
+                    else if (i.Name == filter)
+                    {
+                        Console.WriteLine("NAME: " + i.Name);
+                        Console.WriteLine("Character: " + i.CharName);
+                        Console.WriteLine("Text: " + i.Text);
+                        Console.WriteLine("Option1Text: " + i.OptionName1);
+                        Console.WriteLine("Option1Next: " + i.OptionNext1);
+                        Console.WriteLine("Option1Event: " + i.OptionEvent1);
+
+                        Console.WriteLine("Option2Text: " + i.OptionName2);
+                        Console.WriteLine("Option2Next: " + i.OptionNext2);
+                        Console.WriteLine("Option2Event: " + i.OptionEvent2);
+
+                        Console.WriteLine("Option3Text: " + i.OptionName3);
+                        Console.WriteLine("Option3Next: " + i.OptionNext3);
+                        Console.WriteLine("Option3Event: " + i.OptionEvent3);
+                        Console.WriteLine();
+                    }
+                }
+            }
         }
 
         static int FindElement(string tableName, int id)
@@ -688,6 +868,20 @@ namespace JSON_Test
                 }
             }
             return realID;
+        }
+
+        static Dialog FindDialog(string name)
+        {
+            Dialog temp = new Dialog();
+            temp.Name = "xd";
+            foreach (Dialog i in dialogs)
+            {
+                if (i.Name == name)
+                {
+                    temp = i;
+                }
+            }
+            return temp;
         }
 
         static int GetFirstID(string tableName)
@@ -809,6 +1003,11 @@ namespace JSON_Test
             {
                 serializer.Serialize(writer, charAtk);
             }
+            using (StreamWriter sw = new StreamWriter("dialogs.txt"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, dialogs);
+            }
             Console.WriteLine("tables saved");
         }
 
@@ -839,6 +1038,11 @@ namespace JSON_Test
             {
                 charAtk = serializer.Deserialize<List<CharAttack>>(reader);
             }
+            using (StreamReader sr = new StreamReader("dialogs.txt"))
+            using (JsonReader reader = new JsonTextReader(sr))
+            {
+                dialogs = serializer.Deserialize<List<Dialog>>(reader);
+            }
         }
 
         static void Main(string[] args)
@@ -846,7 +1050,7 @@ namespace JSON_Test
             Load();
             Console.WriteLine("Enter Table to edit");
             string tableName = Console.ReadLine().ToLower();
-            while (!(tableName == "attack" || tableName == "character" || tableName == "map" || tableName == "mapchar" || tableName == "charattack"))
+            while (!(tableName == "attack" || tableName == "character" || tableName == "map" || tableName == "mapchar" || tableName == "charattack" || tableName == "dialog"))
             {
                 Console.WriteLine("Invalid table name, enter new table name");
                 tableName = Console.ReadLine().ToLower();
@@ -865,12 +1069,18 @@ namespace JSON_Test
                 }
                 else if (command[0] == "edit")
                 {
-                    EditElement(tableName, Convert.ToInt32(command[1]));
+                    if (tableName == "Dialog")
+                        EditElement(tableName, command[1]);
+                    else
+                        EditElement(tableName, Convert.ToInt32(command[1]));
                     savedChanges = false;
                 }
                 else if (command[0] == "remove")
                 {
-                    RemoveElement(tableName, Convert.ToInt32(command[1]));
+                    if (tableName == "Dialog")
+                        RemoveDialog(command[1]);
+                    else
+                        RemoveElement(tableName, Convert.ToInt32(command[1]));
                     savedChanges = false;
                 }
                 else if (command[0] == "read")
@@ -907,7 +1117,12 @@ namespace JSON_Test
                     tableName = "charattack";
                     Console.WriteLine("Now editing char-attack table");
                 }
-                else if(command[0] == "exit")
+                else if (command[0] == "dialog")
+                {
+                    tableName = "dialog";
+                    Console.WriteLine("Now editing dialog table");
+                }
+                else if (command[0] == "exit")
                 {
                     if (savedChanges)
                         running = false;
@@ -915,14 +1130,14 @@ namespace JSON_Test
                     {
                         Console.WriteLine("changes were not saved, would you like to save?");
                         if (Console.ReadLine().ToLower() == "y")
-                        { 
+                        {
                             Save();
                             running = false;
                         }
                         else if (Console.ReadLine().ToLower() == "n")
                             running = false;
                     }
-                    
+
                 }
             }
             while (running);
