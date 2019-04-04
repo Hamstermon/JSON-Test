@@ -734,7 +734,7 @@ namespace JSON_Test
                         Console.WriteLine("ID: " + i.ID);
                         string charName = "";
                         int realCharID = FindElement("character", i.CharID);
-                        if (characters[realCharID] != null)
+                        if (realCharID < characters.Count && characters[realCharID] != null)
                             charName = "(" + characters[realCharID].Name + ")";
                         string atkName = "";
                         int realAtkID = FindElement("attack", i.AttackID);
