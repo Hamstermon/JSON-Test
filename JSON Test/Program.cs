@@ -65,12 +65,14 @@ namespace JSON_Test
                 character.SpriteIndex = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("XP");
                 character.XP = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Type1");
-                character.Type1 = Console.ReadLine();
-                Console.WriteLine("Type2");
-                character.Type2 = Console.ReadLine();
-                Console.WriteLine("Type3");
-                character.Type3 = Console.ReadLine();
+                Console.WriteLine("Weak1");
+                character.Weakness1 = Console.ReadLine();
+                Console.WriteLine("Weak2");
+                character.Weakness2 = Console.ReadLine();
+                Console.WriteLine("Res1");
+                character.Resistance1 = Console.ReadLine();
+                Console.WriteLine("Res2");
+                character.Resistance2 = Console.ReadLine();
                 Console.WriteLine("HP");
                 character.HP = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("MP");
@@ -274,9 +276,10 @@ namespace JSON_Test
                 Console.WriteLine("Spritesheet: " + i.SpriteSheet);
                 Console.WriteLine("SpriteIndex: " + i.SpriteIndex);
                 Console.WriteLine("XP: " + i.XP);
-                Console.WriteLine("Type1: " + i.Type1);
-                Console.WriteLine("Type2: " + i.Type2);
-                Console.WriteLine("Type3: " + i.Type3);
+                Console.WriteLine("Weak1: " + i.Weakness1);
+                Console.WriteLine("Weak2: " + i.Weakness2);
+                Console.WriteLine("Res1: " + i.Resistance1);
+                Console.WriteLine("Res2: " + i.Resistance2);
                 Console.WriteLine("HP: " + i.HP);
                 Console.WriteLine("MP: " + i.MP);
                 Console.WriteLine("ATK: " + i.ATK);
@@ -311,20 +314,25 @@ namespace JSON_Test
                 if (temp != "")
                     i.XP = Convert.ToInt32(temp);
 
-                Console.WriteLine("Enter Type 1");
+                Console.WriteLine("Enter Weakness 1");
                 temp = Console.ReadLine();
                 if (temp != "")
-                    i.Type1 = temp;
+                    i.Weakness1 = temp;
 
-                Console.WriteLine("Enter Type 2");
+                Console.WriteLine("Enter Weakness 2");
                 temp = Console.ReadLine();
                 if (temp != "")
-                    i.Type2 = temp;
+                    i.Weakness2 = temp;
 
-                Console.WriteLine("Enter Type 3");
+                Console.WriteLine("Enter Resistance 1");
                 temp = Console.ReadLine();
                 if (temp != "")
-                    i.Type3 = temp;
+                    i.Resistance1 = temp;
+
+                Console.WriteLine("Enter Resistance 2");
+                temp = Console.ReadLine();
+                if (temp != "")
+                    i.Resistance2 = temp;
 
                 Console.WriteLine("Enter HP");
                 temp = Console.ReadLine();
@@ -649,9 +657,10 @@ namespace JSON_Test
                     Console.WriteLine("Spritesheet: " + i.SpriteSheet);
                     Console.WriteLine("SpriteIndex: " + i.SpriteIndex);
                     Console.WriteLine("XP: " + i.XP);
-                    Console.WriteLine("Type1: " + i.Type1);
-                    Console.WriteLine("Type2: " + i.Type2);
-                    Console.WriteLine("Type3: " + i.Type3);
+                    Console.WriteLine("Weak1: " + i.Weakness1);
+                    Console.WriteLine("Weak2: " + i.Weakness2);
+                    Console.WriteLine("Res1: " + i.Resistance1);
+                    Console.WriteLine("Res2: " + i.Resistance2);
                     Console.WriteLine("HP: " + i.HP);
                     Console.WriteLine("MP: " + i.MP);
                     Console.WriteLine("ATK: " + i.ATK);
@@ -734,7 +743,7 @@ namespace JSON_Test
                         Console.WriteLine("ID: " + i.ID);
                         string charName = "";
                         int realCharID = FindElement("character", i.CharID);
-                        if (realCharID < characters.Count && characters[realCharID] != null)
+                        if (realCharID < characters.Count && realCharID >= 0 && characters[realCharID] != null)
                             charName = "(" + characters[realCharID].Name + ")";
                         string atkName = "";
                         int realAtkID = FindElement("attack", i.AttackID);
