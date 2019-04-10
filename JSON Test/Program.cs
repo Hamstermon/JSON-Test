@@ -1069,7 +1069,7 @@ namespace JSON_Test
                 }
                 else if (command[0] == "edit")
                 {
-                    if (tableName == "Dialog")
+                    if (tableName == "dialog")
                         EditElement(tableName, command[1]);
                     else
                         EditElement(tableName, Convert.ToInt32(command[1]));
@@ -1077,7 +1077,7 @@ namespace JSON_Test
                 }
                 else if (command[0] == "remove")
                 {
-                    if (tableName == "Dialog")
+                    if (tableName == "dialog")
                         RemoveDialog(command[1]);
                     else
                         RemoveElement(tableName, Convert.ToInt32(command[1]));
