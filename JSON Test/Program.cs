@@ -701,7 +701,7 @@ namespace JSON_Test
                         Console.WriteLine("ID: " + i.ID);
                         string mapName = "";
                         int realMapID = FindElement("map", i.MapID);
-                        if (maps[realMapID] != null)
+                        if (realMapID >= 0 && realMapID < maps.Count && maps[realMapID] != null)
                             mapName = "(" + maps[realMapID].Name + ")";
                         string charName = "";
                         int realCharID = FindElement("character", i.CharID);
